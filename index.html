@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="userDisplay" />
+    <button onclick="addValue('1')" id="firstValue">1</button>
+    <button onclick="addValue('2')">2</button>
+    <button onclick="addValue('3')">3</button>
+    <button onclick="addValue('4')">4</button>
+    <button onclick="addValue('5')">5</button>
+    <button onclick="addValue('6')">6</button>
+    <button onclick="addValue('7')">7</button>
+    <button onclick="addValue('8')">8</button>
+    <button onclick="addValue('9')">9</button>
+    <button onclick="addValue('+')">+</button>
+    <button onclick="addValue('-')">-</button>
+    <button onclick="addValue('/')">/</button>
+    <button onclick="addValue('*')">*</button>
+    <button onclick="addValue('%')">%</button>
+    <button onclick="clearValue()">C</button>
+    <button onclick="addValue('**2')">x^2</button>
+    <button onclick="calcNum('=')">=</button>
+    <div id="showMe"></div>
+  </body>
+  <script>
+    function addValue(calcValue) {
+      let userDisplay = document.getElementById("userDisplay").value.trim();
+
+      document.getElementById("userDisplay").value += calcValue;
+      // document.getElementById("userDisplay").value = "";
+      // document.getElementById("userDisplay").value += calcValue;
+      // console.log(calcValue);
+      // showMe.innerHTML += `${userDisplay}`;
+    }
+    function calcNum() {
+      let userDisplay = document.getElementById("userDisplay").value.trim();
+      let result = eval(document.getElementById("userDisplay").value);
+      console.log(result);
+      document.getElementById("userDisplay").value = result;
+    }
+
+    function clearValue() {
+      document.getElementById("userDisplay").value = "";
+    }
+  </script>
+</html>
